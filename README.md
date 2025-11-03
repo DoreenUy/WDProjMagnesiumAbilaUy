@@ -4,7 +4,7 @@
 ---
 
 ## LOGO  
-*(![Logo](Project_Logo.webp))*  
+*(![Logo](assets/Project_Logo.webp))*  
 
 ---
 
