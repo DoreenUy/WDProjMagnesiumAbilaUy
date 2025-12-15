@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Heroes of the Wizarding World" />
+  <meta name="author" content="JDL Abila and DA Uy" />
+
+  <title>Heroes of the Wizarding World | Exploring Harry Potter</title>
+  <link rel="icon" href="assets/Project_Logo.webp" type="image/webp" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Playfair+Display&display=swap" rel="stylesheet">
+
+  <style>
+    * {margin:0;padding:0;box-sizing:border-box;}
+    body {
+      font-family: 'Playfair Display', serif;
+      background: url("assets/3rd page background.png") no-repeat center/cover;
+      background-size: cover;
+      color: #eaeaea;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top:0; left:0;
+      width:100%; height:100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 0;
+    }
+    nav {
+      display:flex;justify-content:center;gap:28px;padding:22px;
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(6px);
+      border-bottom:1px solid rgba(212,175,55,0.3);
+      position: sticky;top:0;z-index:10;
+    }
+    nav a {
+      font-family:'Cinzel Decorative', serif;color:#f5f5f5;
+      text-decoration:none;letter-spacing:1.5px;font-size:1rem;position:relative;
+    }
+    nav a::after {content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:#d4af37;transition: width 0.3s ease;}
+    nav a:hover::after {width:100%;}
+
+    .content {max-width:1100px;margin:80px auto;padding:20px;position:relative;z-index:2;text-align:center;}
+    .content h2 {
+      font-family: 'Cinzel Decorative', serif;font-size:3rem;color:#f5d76e;
+      margin-bottom:40px;letter-spacing:3px;
+      text-shadow:0 0 10px #f5d76e,0 0 20px #d4af37;
+      animation: glowTitle 4s ease-in-out infinite;
+    }
+    @keyframes glowTitle {
+      0%,100% {text-shadow:0 0 10px #f5d76e,0 0 20px #d4af37;}
+      50% {text-shadow:0 0 25px #fff8c6,0 0 50px #d4af37;}
+    }
+
+    .character-card {
+      display:flex;align-items:center;background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(4px);border-radius:12px;padding:20px;margin-bottom:30px;
+      box-shadow:0 0 20px rgba(212,175,55,0.3);transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align:left;z-index:2;
+    }
+    .character-card:hover {transform:translateY(-5px);box-shadow:0 0 35px rgba(255,240,180,0.7);}
+    .character-img {width:180px;height:180px;object-fit:cover;border-radius:10px;margin-right:20px;
+      filter:drop-shadow(0 0 15px #d4af37);transition:transform 0.3s ease, filter 0.3s ease;}
+    .character-img:hover {transform:scale(1.05);filter:drop-shadow(0 0 30px #fff8c6);}
+    .character-info h3 {font-family: 'Cinzel Decorative', serif;color:#f5d76e;margin-bottom:10px;
+      text-shadow:0 0 5px #f5d76e,0 0 10px #d4af37;}
+    .villain .character-card {border-left:4px solid #ff4d4d;}
+
+    footer {text-align:center;padding:20px;background: rgba(0,0,0,0.8);
+      border-top:1px solid rgba(212,175,55,0.25);font-family:'Cinzel Decorative', serif;font-size:0.85rem;position:relative;z-index:10;}
+
+    @media(max-width:768px){
+      .character-card{flex-direction:column;text-align:center;}
+      .character-img{margin:0 0 15px 0;}
+      .content h2{font-size:2rem;}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="The Magic Begins.html">The Magic Begins</a>
+  <a href="Mysteries of the Hogwarts Houses.html">Hogwarts Houses</a>
+  <a href="Heroes of the Wizarding World.html">Characters</a>
+  <a href="Through the Halls of Hogwarts.html">Halls of Hogwarts</a>
+  <a href="The Art of Wizardry.html">Wizardry</a>
+  <a href="Meet the Minds Behind the Magic.html">Minds Behind the Magic</a>
+</nav>
+
+<section class="content">
+  <h2>Main Heroes</h2>
+
+  <div class="character-card">
+    <img src="assets/Harry Potter.jpg" alt="Harry Potter" class="character-img">
+    <div class="character-info">
+      <h3>Harry Potter</h3>
+      <p><strong>Role:</strong> The central protagonist known as “The Boy Who Lived.” He survived the attack of Voldemort as a baby and is famous throughout the wizarding world for this.</p>
+      <p><strong>Age per movie:</strong> 11–17</p>
+      <p><strong>Achievements:</strong> Led the fight against Voldemort, won the Triwizard Tournament, defeated Death Eaters multiple times, became an Auror, and helped rebuild the wizarding world.</p>
+    </div>
+  </div>
+
+  <div class="character-card">
+    <img src="assets/Hermione Granger.jpg" alt="Hermione Granger" class="character-img">
+    <div class="character-info">
+      <h3>Hermione Granger</h3>
+      <p><strong>Role:</strong> Harry's brilliant and fiercely loyal friend, known for her intelligence, diligence, and dedication to justice. A key member of Dumbledore's Army and the trio.</p>
+      <p><strong>Age per movie:</strong> 11–17</p>
+      <p><strong>Achievements:</strong> Played a crucial role in finding and destroying Horcruxes, excelled academically, fought in numerous battles, and became a leading figure in the Ministry of Magic.</p>
+    </div>
+  </div>
+
+  <div class="character-card">
+    <img src="assets/Ron Weasley.jpg" alt="Ron Weasley" class="character-img">
+    <div class="character-info">
+      <h3>Ron Weasley</h3>
+      <p><strong>Role:</strong> Harry's loyal best friend, known for bravery, humor, and unwavering loyalty to his friends and family. Often acts as the emotional heart of the trio.</p>
+      <p><strong>Age per movie:</strong> 11–17</p>
+      <p><strong>Achievements:</strong> Assisted in destroying Horcruxes, fought in key battles, excelled at wizard chess, and later became an Auror and respected member of wizarding society.</p>
+    </div>
+  </div>
+
+  <div class="character-card">
+    <img src="assets/Luna Lovegood.jpg" alt="Luna Lovegood" class="character-img">
+    <div class="character-info">
+      <h3>Luna Lovegood</h3>
+      <p><strong>Role:</strong> Hogwarts student, eccentric and insightful, known for her unique perspective and unwavering loyalty to her friends. Member of Dumbledore's Army.</p>
+      <p><strong>Age per movie:</strong> 14–16</p>
+      <p><strong>Achievements:</strong> Fought in the Battle of Hogwarts, discovered key information, supported the trio, and became a famous Magizoologist in later life.</p>
+    </div>
+  </div>
+
+  <div class="character-card">
+    <img src="assets/Cedric Diggory.jpg" alt="Cedric Diggory" class="character-img">
+    <div class="character-info">
+      <h3>Cedric Diggory</h3>
+      <p><strong>Role:</strong> Hogwarts champion, brave Hufflepuff student, known for fairness, sportsmanship, and loyalty.</p>
+      <p><strong>Age per movie:</strong> 17</p>
+      <p><strong>Achievements:</strong> Triwizard co-champion, displayed exemplary courage and fairness, remembered as a symbol of honor and bravery in the wizarding world.</p>
+    </div>
+  </div>
+
+</section>
+
+<section class="content">
+  <h2>Villains</h2>
+
+  <div class="character-card villain">
+    <img src="assets/Tom Riddle.jpg" alt="Tom Riddle" class="character-img">
+    <div class="character-info">
+      <h3>Tom Riddle</h3>
+      <p><strong>Role:</strong> Young Voldemort, a brilliant and manipulative student at Hogwarts. Ambitious, cunning, and skilled in dark magic, he began building the foundations of his future reign of terror.</p>
+      <p><strong>Age per movie:</strong> 11–16</p>
+      <p><strong>Achievements:</strong> Created Horcruxes while still a student, manipulated peers, uncovered ancient magical knowledge, and started laying the groundwork to become Voldemort.</p>
+    </div>
+  </div>
+
+  <div class="character-card villain">
+    <img src="assets/Voldemort.jpg" alt="Voldemort" class="character-img">
+    <div class="character-info">
+      <h3>Voldemort</h3>
+      <p><strong>Role:</strong> Dark Lord and main antagonist. Obsessed with immortality, power, and the domination of the wizarding world, known for cruelty and fearlessness in dark magic.</p>
+      <p><strong>Age per movie:</strong> 71+</p>
+      <p><strong>Achievements:</strong> Created multiple Horcruxes, led Death Eaters, nearly conquered the wizarding world, instilled fear across generations, and became the most notorious dark wizard in history.</p>
+    </div>
+  </div>
+
+  <div class="character-card villain">
+    <img src="assets/Bellatrix Lesstrange.jpg" alt="Bellatrix Lestrange" class="character-img">
+    <div class="character-info">
+      <h3>Bellatrix Lestrange</h3>
+      <p><strong>Role:</strong> Loyal and fanatical Death Eater, devoted to Voldemort. Known for her cruelty, cunning, and obsession with pure-blood supremacy.</p>
+      <p><strong>Age per movie:</strong> 45+</p>
+      <p><strong>Achievements:</strong> Tortured prisoners, killed Sirius Black, fought in major battles, and spread terror throughout the wizarding world.</p>
+    </div>
+  </div>
+
+  <div class="character-card villain">
+    <img src="assets/Peter Pettigrew.jpg" alt="Peter Pettigrew" class="character-img">
+    <div class="character-info">
+      <h3>Peter Pettigrew</h3>
+      <p><strong>Role:</strong> Traitorous Death Eater, responsible for betraying the Potters. Cowardly and self-serving, but surprisingly skilled at concealment and stealth.</p>
+      <p><strong>Age per movie:</strong> 30s</p>
+      <p><strong>Achievements:</strong> Betrayed James & Lily Potter, served Voldemort for years, and caused significant harm through deception and espionage.</p>
+    </div>
+  </div>
+
+  <div class="character-card villain">
+    <img src="assets/Draco Malfoy.jpg" alt="Draco Malfoy" class="character-img">
+    <div class="character-info">
+      <h3>Draco Malfoy</h3>
+      <p><strong>Role:</strong> Slytherin student, rival of Harry Potter. Influenced by family and Slytherin ambition, he often struggled with morality and loyalty.</p>
+      <p><strong>Age per movie:</strong> 11–17</p>
+      <p><strong>Achievements:</strong> Participated in Death Eater schemes, served as a foil to Harry and friends, and ultimately survived while learning lessons about choices and consequences.</p>
+    </div>
+  </div>
+
+  <div class="character-card villain">
+    <img src="assets/Professor Quirinus Quirrell.jpg" alt="Professor Quirrell" class="character-img">
+    <div class="character-info">
+      <h3>Professor Quirinus Quirrell</h3>
+      <p><strong>Role:</strong> Hogwarts teacher with a secret allegiance to Voldemort. Nervous and timid in appearance, but secretly ambitious and dangerous.</p>
+      <p><strong>Age per movie:</strong> 30s–40s</p>
+      <p><strong>Achievements:</strong> Attempted to steal the Philosopher’s Stone, hosted Voldemort on his head, and was ultimately defeated by Harry Potter, demonstrating courage and ingenuity on both sides.</p>
+    </div>
+  </div>
+
+</section>
+
+<footer>
+  © 2025 Exploring Harry Potter | JDL Abila & DA Uy
+</footer>
+
+</body>
+</html>
