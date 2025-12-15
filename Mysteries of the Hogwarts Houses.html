@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mysteries of the Hogwarts Houses" />
+  <meta name="author" content="JDL Abila and DA Uy" />
+
+  <title>Mysteries of the Hogwarts Houses | Exploring Harry Potter</title>
+  <link rel="icon" href="assets/Project_Logo.webp" type="image/webp" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Playfair+Display&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Playfair Display', serif;
+      background: #05070d;
+      color: #eaeaea;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      padding: 22px;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      font-family: 'Cinzel Decorative', serif;
+      color: #f5f5f5;
+      text-decoration: none;
+      letter-spacing: 1.5px;
+      font-size: 1rem;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 2px;
+      background: #d4af37;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: 80px auto;
+      padding: 25px;
+      text-align: center;
+      background: rgba(0,0,0,0.45);
+      backdrop-filter: blur(4px);
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgba(212,175,55,0.3);
+    }
+
+    .content h2 {
+      font-family: 'Cinzel Decorative', serif;
+      color: #f5d76e;
+      margin-bottom: 20px;
+      letter-spacing: 3px;
+      font-size: 2.8rem;
+      text-shadow: 0 0 10px #f5d76e, 0 0 20px #d4af37;
+      animation: glowTitle 4s ease-in-out infinite;
+    }
+
+    @keyframes glowTitle {
+      0%,100% { text-shadow: 0 0 10px #f5d76e, 0 0 20px #d4af37; }
+      50% { text-shadow: 0 0 25px #fff8c6, 0 0 50px #d4af37; }
+    }
+
+    .content p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    .content ul {
+      text-align: left;
+      margin: 20px auto;
+      max-width: 500px;
+      font-size: 1.1rem;
+    }
+
+    .houses-section {
+      position: relative;
+      min-height: 100vh;
+      background: url("assets/hogwarts_background.jpg") no-repeat center/cover;
+    }
+
+    .houses-section::before {
+      content: "";
+      position: absolute;
+      top:0; left:0;
+      width:100%; height:100%;
+      background: rgba(0,0,0,0.35);
+      z-index: 1;
+    }
+
+    .dust {
+      position: absolute;
+      top: 0; left:0;
+      width: 100%; height:100%;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .dust span {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: #fff8c6;
+      opacity: 0.8;
+      animation: floatDust 15s linear infinite;
+    }
+
+    @keyframes floatDust {
+      0% { transform: translateY(0) translateX(0); opacity:0.2;}
+      50% { transform: translateY(-500px) translateX(100px); opacity:0.8;}
+      100% { transform: translateY(-1000px) translateX(-100px); opacity:0;}
+    }
+
+    .house {
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      object-fit: contain;
+      z-index: 3;
+      opacity: 0.95;
+      filter: drop-shadow(0 0 20px #d4af37);
+      transition: transform 0.3s ease;
+    }
+
+    .house:hover {
+      transform: scale(1.08) rotate(-2deg);
+      filter: drop-shadow(0 0 35px #fff8c6);
+    }
+
+    .gryffindor { top: 50px; left: 50px; }
+    .slytherin { top: 50px; right: 50px; }
+    .hufflepuff { bottom: 50px; left: 50px; }
+    .ravenclaw { bottom: 50px; right: 50px; }
+
+    .sorting-hat {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      height: 300px;
+      object-fit: contain;
+      z-index: 3;
+      opacity: 0.95;
+      filter: drop-shadow(0 0 25px #fff8c6);
+      animation: floatHat 3s ease-in-out infinite;
+    }
+
+    @keyframes floatHat {
+      0%,100% { transform: translate(-50%, -50%) translateY(0);}
+      50% { transform: translate(-50%, -50%) translateY(-15px);}
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0,0,0,0.8);
+      border-top: 1px solid rgba(212,175,55,0.25);
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 0.85rem;
+      z-index:10;
+      position: relative;
+    }
+
+    @media (max-width: 768px) {
+      .house { width: 150px; height: 150px; }
+      .sorting-hat { width: 200px; height: 200px; }
+      .content h2 { font-size: 2rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="The Magic Begins.html">The Magic Begins</a>
+    <a href="Mysteries of the Hogwarts Houses.html">Hogwarts Houses</a>
+    <a href="Heroes of the Wizarding World.html">Characters</a>
+    <a href="Through the Halls of Hogwarts.html">Halls of Hogwarts</a>
+    <a href="The Art of Wizardry.html">Wizardry</a>
+    <a href="Meet the Minds Behind the Magic.html">Minds Behind the Magic</a>
+  </nav>
+
+  <section class="content">
+    <h2>Mysteries of the Hogwarts Houses</h2>
+    <p>
+      There are 4 houses that you can get into when you enter Hogwarts. These houses were named after each of the 4 founders of Hogwarts: Godric Gryffindor, Rowena Ravenclaw, Salazar Slytherin, and Helga Hufflepuff. The sorting hat groups you based on your most prominent attributes, however, it also takes into account your preferences. For example, Harry Potter had attributes that could have made him part of the Slytherin group, however, he whispered to himself that he did not want to be there, so the sorting hat grouped him into the Gryffindor group.
+    </p>
+    <p>Here are the characteristics and history of each of the 4 houses:</p>
+    <ul>
+      <li><strong>Gryffindor</strong> - Godric Gryffindor</li>
+      <li><strong>Slytherin</strong> - Salazar Slytherin</li>
+      <li><strong>Hufflepuff</strong> - Helga Hufflepuff</li>
+      <li><strong>Ravenclaw</strong> - Rowena Ravenclaw</li>
+    </ul>
+  </section>
+
+  <section class="houses-section">
+    <div class="dust">
+      <span style="top:20%; left:10%; animation-delay:0s;"></span>
+      <span style="top:50%; left:30%; animation-delay:2s;"></span>
+      <span style="top:80%; left:70%; animation-delay:4s;"></span>
+      <span style="top:60%; left:50%; animation-delay:1s;"></span>
+      <span style="top:30%; left:80%; animation-delay:3s;"></span>
+    </div>
+
+    <img src="assets/Gryffindor .png" alt="Gryffindor" class="house gryffindor">
+    <img src="assets/Slytherin.png" alt="Slytherin" class="house slytherin">
+    <img src="assets/Hufflepuff.png" alt="Hufflepuff" class="house hufflepuff">
+    <img src="assets/Ravenclaw.png" alt="Ravenclaw" class="house ravenclaw">
+    <img src="assets/Sorting hat.jpg" alt="Sorting Hat" class="sorting-hat">
+  </section>
+
+  <footer>
+    © 2025 Exploring Harry Potter | JDL Abila & DA Uy
+  </footer>
+
+</body>
+</html>
