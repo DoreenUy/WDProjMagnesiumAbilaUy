@@ -38,3 +38,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   changeColor();
 });
+const sortingHat = document.querySelector(".sorting-hat");
+const houses = document.querySelectorAll(".house");
+
+sortingHat.addEventListener("click", () => {
+  houses.forEach(house => {
+    house.classList.remove("selected", "shake");
+  });
+  sortingHat.classList.remove("shake");
+
+  houses.forEach(house => house.classList.add("shake"));
+  sortingHat.classList.add("shake");
+
+  setTimeout(() => {
+    houses.forEach(house => house.classList.remove("shake"));
+    sortingHat.classList.remove("shake");
+
+    const randomHouse = houses[Math.floor(Math.random() * houses.length)];
+    randomHouse.classList.add("selected");
+  }, 2500);
+});
