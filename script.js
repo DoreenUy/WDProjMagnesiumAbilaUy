@@ -37,24 +37,41 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   changeColor();
-});
 const sortingHat = document.querySelector(".sorting-hat");
 const houses = document.querySelectorAll(".house");
+const resultText = document.getElementById("house-result");
 
 sortingHat.addEventListener("click", () => {
+  // Reset previous effects
   houses.forEach(house => {
     house.classList.remove("selected", "shake");
   });
-  sortingHat.classList.remove("shake");
+  sortingHat.classList.remove("shake-hat");
+  resultText.style.opacity = 0;
 
+  // Start shaking
   houses.forEach(house => house.classList.add("shake"));
-  sortingHat.classList.add("shake");
+  sortingHat.classList.add("shake-hat");
+  resultText.textContent = "The Sorting Hat is thinking...";
+  resultText.style.opacity = 1;
 
   setTimeout(() => {
     houses.forEach(house => house.classList.remove("shake"));
-    sortingHat.classList.remove("shake");
+    sortingHat.classList.remove("shake-hat");
 
     const randomHouse = houses[Math.floor(Math.random() * houses.length)];
     randomHouse.classList.add("selected");
+
+    // Get house name from class
+    if (randomHouse.classList.contains("gryffindor")) {
+      resultText.textContent = "Gryffindor!";
+    } else if (randomHouse.classList.contains("slytherin")) {
+      resultText.textContent = "Slytherin!";
+    } else if (randomHouse.classList.contains("hufflepuff")) {
+      resultText.textContent = "Hufflepuff!";
+    } else if (randomHouse.classList.contains("ravenclaw")) {
+      resultText.textContent = "Ravenclaw!";
+    }
   }, 2500);
+});
 });
