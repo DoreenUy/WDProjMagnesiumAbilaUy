@@ -89,3 +89,18 @@ This page will be displaying the collected information from the form. It will di
 
 ### 3rd Page
 This page will be making a class schedule for you based on your preferred classes. If you are interested in Quidditch or any other extracurricular activities, it can also include practice sessions for your hobbies.
+
+---
+
+## Wireframe Designs
+
+Below are the wireframe designs used in creating the HTML Form:
+
+### HTML Form
+![HTML Form Wireframe](assets/seventh.png)
+
+### 2nd Page
+![2nd Page Wireframe](assets/eighth.png)
+
+### 3rd Page
+![3rd Page Wireframe](assets/ninth.png)
