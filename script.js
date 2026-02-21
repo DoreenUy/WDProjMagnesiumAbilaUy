@@ -41,15 +41,17 @@ const sortingHat = document.querySelector(".sorting-hat");
 const houses = document.querySelectorAll(".house");
 const resultText = document.getElementById("house-result");
 
+resultText.textContent = "Click the Sorting Hat to find your house!";
+resultText.style.opacity = 1;
+resultText.style.fontSize = "0.9rem";
 sortingHat.addEventListener("click", () => {
-  // Reset previous effects
+  resultText.style.fontSize = "2.0rem";
   houses.forEach(house => {
     house.classList.remove("selected", "shake");
   });
   sortingHat.classList.remove("shake-hat");
   resultText.style.opacity = 0;
 
-  // Start shaking
   houses.forEach(house => house.classList.add("shake"));
   sortingHat.classList.add("shake-hat");
   resultText.textContent = "The Sorting Hat is thinking...";
@@ -62,7 +64,6 @@ sortingHat.addEventListener("click", () => {
     const randomHouse = houses[Math.floor(Math.random() * houses.length)];
     randomHouse.classList.add("selected");
 
-    // Get house name from class
     if (randomHouse.classList.contains("gryffindor")) {
       resultText.textContent = "Gryffindor!";
     } else if (randomHouse.classList.contains("slytherin")) {

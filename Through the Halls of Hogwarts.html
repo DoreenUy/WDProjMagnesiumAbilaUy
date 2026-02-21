@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Through the Halls of Hogwarts" />
+  <meta name="author" content="JDL Abila and DA Uy" />
+
+  <title>Through the Halls of Hogwarts | Exploring Harry Potter</title>
+  <link rel="icon" href="assets/Project_Logo.webp" type="image/webp" />
+  <link rel="stylesheet" href="Through The Halls of Hogwarts.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Playfair+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="The Magic Begins.html">The Magic Begins</a>
+  <a href="Mysteries of the Hogwarts Houses.html">Hogwarts Houses</a>
+  <a href="Heroes of the Wizarding World.html">Characters</a>
+  <a href="#">Halls of Hogwarts</a>
+  <a href="The Art of Wizardry.html">Wizardry</a>
+  <a href="Meet the Minds Behind the Magic.html">Minds Behind the Magic</a>
+</nav>
+
+<section class="content">
+  <h2>Explore Hogwarts</h2>
+  <p>Click on the glowing spots on the map to explore different Hogwarts locations. Zoom in and learn about key places and events.</p>
+
+  <div class="map-container">
+    <div class="map" id="map"></div>
+
+    <div class="hotspot great-hall" data-place="hall"></div>
+    <div class="hotspot library" data-place="library"></div>
+    <div class="hotspot dungeons" data-place="dungeons"></div>
+    <div class="hotspot astronomy" data-place="astronomy"></div>
+    <div class="hotspot quidditch" data-place="quidditch"></div>
+    <div class="hotspot entrance" data-place="entrance"></div>
+    <div class="hotspot common-room" data-place="common"></div>
+    <div class="hotspot forest" data-place="forest"></div>
+    <div class="hotspot requirement" data-place="requirement"></div>
+    <div class="hotspot hospital" data-place="hospital"></div>
+    <div class="hotspot office" data-place="office"></div>
+  </div>
+</section>
+
+<div class="popup" id="popup">
+  <div class="popup-content">
+    <h2 id="popup-title"></h2>
+    <img id="popup-img" src="" alt="">
+    <p id="popup-text"></p>
+    <div class="close" id="closePopup">Return to Map</div>
+  </div>
+</div>
+
+<footer>
+  © 2025 Exploring Harry Potter | JDL Abila & DA Uy
+</footer>
+
+<script src="script1.js"></script>
+</body>
+</html>
