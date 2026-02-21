@@ -22,7 +22,7 @@ The home page will contain a navigation bar that will allow the user to go to ea
 This page will be exploring the history of how Harry Potter came to be. We will talk about the progress from being a book to a movie. It will also include short descriptions of the casting of characters and the settings of where main scenes were filmed. We will also be summarizing each book and movie of the Harry Potter series and connecting each movie to the next.  
 
 ### 2nd Page – Mysteries of the Hogwarts Houses  
-In this page, we will be showing each of the 4 houses of Hogwarts and the unique characteristics of each group. There is also an optional quiz available that you can answer which will sort you into the house most suitable for you.  
+In this page, we will be showing each of the 4 houses of Hogwarts and the unique characteristics of each group. There is also an html form available that you can fill up which will help in sorting you to your most suitable house.  
 
 ### 3rd Page – Heroes of the Wizarding World  
 In this page, we will be listing the main characters in the series and giving a short description of their role, background, age for each movie, and achievements.  
@@ -71,3 +71,36 @@ Below are the wireframe designs used in creating the website:
 
 ### 🪄 Meet the Minds Behind the Magic
 ![Meet the Minds Wireframe](assets/sixth.png)
+
+---
+
+## HTML Form
+Our website will include an HTML form where we can help the user choose their preferred Hogwarts House based on their traits or characteristics. Our form will collect some personal information to personalize their experience. The form will be asking for the user’s name and preferred Hogwarts House. There will also be a list of traits or values where they can select the ones that best describe their personality. We will include a list of traits per House so that they can confirm which group best suits them based on the traits that they have selected. The form will also be asking you to select classes which you are interested in so that it can make you a class schedule. The information from the form will be saved on the local storage of the user’s device.
+
+---
+
+## Outline of HTML Form Pages
+
+### 1st Page - HTML Form
+This page will display the HTML form where the user will input their name, Hogwarts House preference, select the characteristics that best describe their personality, and choose the classes that seem the most interesting to them. This will then be saved on the local storage of their device. 
+
+### 2nd Page
+This page will be displaying the collected information from the form. It will display the characteristics you checked that connected you to this house. It will take into consideration your preferred group, however, it can also assign you to the House whose characteristics match better to your selected characteristics. The page will be designed based on the color schemes of your chosen House.
+
+### 3rd Page
+This page will be making a class schedule for you based on your preferred classes. If you are interested in Quidditch or any other extracurricular activities, it can also include practice sessions for your hobbies.
+
+---
+
+## Wireframe Designs
+
+Below are the wireframe designs used in creating the HTML Form:
+
+### HTML Form
+![HTML Form Wireframe](assets/seventh.png)
+
+### 2nd Page
+![2nd Page Wireframe](assets/eighth.png)
+
+### 3rd Page
+![3rd Page Wireframe](assets/ninth.png)
