@@ -183,5 +183,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 700);
 
   });
+  const creatureCards = document.querySelectorAll(".creature-card");
 
-});
+  creatureCards.forEach(card => {
+    card.addEventListener("click", function () {
+      card.classList.toggle("active");
+    });
+  });
+});;
