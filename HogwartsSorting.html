@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hogwarts Sorting Form</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Playfair+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="HogwartsSorting.css">
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="The Magic Begins.html">The Magic Begins</a>
+    <a href="Mysteries of the Hogwarts Houses.html">Hogwarts Houses</a>
+    <a href="Heroes of the Wizarding World.html">Characters</a>
+    <a href="HogwartsSorting.html">Hogwarts Sorting</a>
+    <a href="The Art of Wizardry.html">Wizardry</a>
+    <a href="Meet the Minds Behind the Magic.html">Minds Behind the Magic</a>
+  </nav>
+
+  <section class="sorting-form">
+    <h2>Discover Your Hogwarts House</h2>
+    <p class="click-note">💫 Click on the traits and classes to customize your magical experience!</p>
+
+    <form id="hogwartsForm">
+
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+      <label for="house">Preferred Hogwarts House:</label>
+      <select id="house" name="house" required>
+        <option value="">--Choose a House--</option>
+        <option value="Gryffindor">Gryffindor</option>
+        <option value="Hufflepuff">Hufflepuff</option>
+        <option value="Ravenclaw">Ravenclaw</option>
+        <option value="Slytherin">Slytherin</option>
+      </select>
+
+      <label>Choose traits that describe you:</label>
+      <div class="traits">
+        <label><input type="checkbox" name="traits" value="Brave"> Brave</label>
+        <label><input type="checkbox" name="traits" value="Loyal"> Loyal</label>
+        <label><input type="checkbox" name="traits" value="Wise"> Wise</label>
+        <label><input type="checkbox" name="traits" value="Cunning"> Cunning</label>
+        <label><input type="checkbox" name="traits" value="Creative"> Creative</label>
+        <label><input type="checkbox" name="traits" value="Determined"> Determined</label>
+      </div>
+
+      <label>Choose classes you are interested in:</label>
+      <div class="classes">
+        <label><input type="checkbox" name="classes" value="Potions"> Potions</label>
+        <label><input type="checkbox" name="classes" value="Defense Against the Dark Arts"> Defense Against the Dark Arts</label>
+        <label><input type="checkbox" name="classes" value="Herbology"> Herbology</label>
+        <label><input type="checkbox" name="classes" value="Charms"> Charms</label>
+        <label><input type="checkbox" name="classes" value="Care of Magical Creatures"> Care of Magical Creatures</label>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <div id="confirmation" class="confirmation"></div>
+  </section>
+
+  <footer>
+    © 2025 Hogwarts Sorting | JDL Abila & DA Uy
+  </footer>
+
+  <script src="HogwartsSorting.js"></script>
+</body>
+</html>

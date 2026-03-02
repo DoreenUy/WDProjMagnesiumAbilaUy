@@ -1,0 +1,199 @@
+body {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  background: linear-gradient(120deg, #0b0c17 0%, #1a1b2d 50%, #0b0c17 100%);
+  color: #f0e6d2;
+  overflow-x: hidden;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  padding: 22px;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(212,175,55,0.3);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+nav a {
+  font-family: 'Cinzel Decorative', serif;
+  color: #f5f5f5;
+  text-decoration: none;
+  letter-spacing: 1.5px;
+  font-size: 1rem;
+  position: relative;
+  padding: 6px 10px;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #fff8c6;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #d4af37;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+.sorting-form {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 25px;
+  background: rgba(0,0,0,0.7);
+  border: 2px solid #ffd97f;
+  border-radius: 15px;
+  color: #ffd97f;
+}
+
+.sorting-form h2 {
+  text-align: center;
+  font-family: 'Cinzel Decorative', serif;
+  margin-bottom: 15px;
+}
+
+.click-note {
+  font-size: 0.95rem;
+  text-align: center;
+  margin: 5px 0 15px 0;
+  font-style: italic;
+  color: #ffd97f;
+  opacity: 0.85;
+}
+
+.sorting-form label {
+  display: block;
+  margin: 10px 0 5px 0;
+}
+
+.sorting-form input[type="text"],
+.sorting-form select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ffd97f;
+  background: #111;
+  color: #f0e6d2;
+}
+
+.traits label,
+.classes label {
+  display: block;
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  accent-color: #ffd97f;
+  margin-right: 8px;
+}
+
+button[type="submit"] {
+  background: #ffd97f;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  display: block;
+  margin: 15px auto 0 auto;
+  transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background: #fff8c6;
+}
+
+.confirmation {
+  margin-top: 20px;
+  text-align: center;
+  font-style: italic;
+  color: #f0e6d2;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0,0,0,0.85);
+  border-top: 1px solid rgba(212,175,55,0.3);
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 0.85rem;
+}
+.schedule {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  text-align: left;
+}
+
+.schedule th, .schedule td {
+  border: 1px solid #ffd97f;
+  padding: 8px;
+}
+
+.schedule th {
+  background: #111;
+  color: #ffd97f;
+}
+
+.schedule td {
+  background: #1a1a1a;
+  color: #f0e6d2;
+}
+
+.schedule-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.class-card {
+  background: linear-gradient(135deg, #1a1a1a, #2e2e2e);
+  border: 2px solid #ffd97f;
+  border-radius: 12px;
+  width: 140px;
+  height: 100px;
+  text-align: center;
+  padding: 10px;
+  color: #ffd97f;
+  font-family: 'Cinzel Decorative', serif;
+  font-weight: bold;
+  box-shadow: 0 0 15px rgba(255,215,0,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.class-card:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 0 25px #fff8c6, 0 0 40px #ffd97f;
+}
+
+.class-day {
+  font-size: 0.85rem;
+  color: #fff8c6;
+  margin-bottom: 5px;
+  text-shadow: 0 0 3px #ffd97f;
+}
+
+.class-name {
+  font-size: 1rem;
+  text-shadow: 0 0 5px #ffd97f, 0 0 10px #fff8c6;
+}
