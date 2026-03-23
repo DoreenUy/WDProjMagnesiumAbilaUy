@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hogwarts Profile</title>
+  <style>
+    body{font-family:'Playfair Display', serif;background:#1b1b2f;color:#f0f0f0;margin:0;padding:0;}
+    nav{background:#2e2e44;padding:15px;text-align:center;}
+    nav a{color:#f0f0f0;text-decoration:none;margin:0 15px;font-weight:bold;}
+    nav a:hover{color:#ffd700;text-shadow:0 0 5px #ffd700;}
+    section{max-width:650px;margin:50px auto;background:#2e2e44;padding:40px;border-radius:15px;}
+    h1{text-align:center;color:#ffd700;}
+    ul{list-style:none;padding:0;}
+    li{background:#1b1b2f;padding:8px;margin:5px 0;border-radius:8px;}
+  </style>
+</head>
+<body>
+<nav>
+  <a href="HogwartsSorting.html">Back to Sorting</a>
+  <a href="page3.html">View Class Schedule</a>
+</nav>
+
+<section>
+<h1>Your Hogwarts Profile</h1>
+<div id="profile">
+  <p><strong>Name:</strong> <span id="displayName"></span></p>
+  <p><strong>House:</strong> <span id="displayHouse"></span></p>
+  <p><strong>Traits:</strong></p>
+  <ul id="displayTraits"></ul>
+</div>
+</section>
+
+<script>
+const data=JSON.parse(localStorage.getItem('hogwartsUser'));
+if(data){
+  document.getElementById('displayName').textContent=data.name;
+  document.getElementById('displayHouse').textContent=data.house;
+  const ul=document.getElementById('displayTraits');
+  data.traits.forEach(t=>{const li=document.createElement('li');li.textContent=t;ul.appendChild(li);});
+}else{document.getElementById('profile').innerHTML='<p>No profile data. Fill out the sorting form first.</p>';}
+</script>
+</body>
+</html>

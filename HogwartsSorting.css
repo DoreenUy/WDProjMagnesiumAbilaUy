@@ -197,3 +197,34 @@ footer {
   font-size: 1rem;
   text-shadow: 0 0 5px #ffd97f, 0 0 10px #fff8c6;
 }
+.traits label, .classes label {
+  display:inline-block;
+  background:#1a1a2e;
+  padding:8px 15px;
+  margin:5px;
+  border-radius:12px;
+  cursor:pointer;
+  position:relative;
+  transition: all 0.3s ease;
+  overflow:hidden;
+  color:#f0f0f0;
+}
+
+.traits input:checked + span, .classes input:checked + span {
+  background:#ffd700;
+  color:#1a1a2e;
+  transform: scale(1.2);
+  box-shadow: 0 0 12px #ffd700, 0 0 20px #ffd700 inset;
+  animation: sparkle 0.6s ease forwards;
+}
+
+@keyframes sparkle {
+  0% { box-shadow: 0 0 0px #ffd700, 0 0 0px #ffd700 inset; }
+  50% { box-shadow: 0 0 15px #ffd700, 0 0 25px #ffd700 inset; }
+  100% { box-shadow: 0 0 8px #ffd700, 0 0 12px #ffd700 inset; }
+}
+
+.traits label:hover, .classes label:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 6px #ffd700;
+}
