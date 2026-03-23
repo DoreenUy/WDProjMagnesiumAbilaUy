@@ -8,6 +8,40 @@
 
 ---
 
+## FINAL MODIFICATION PROPOSAL
+
+### 1st Page - HTML Form
+This page will display the HTML form where the user will input their name, Hogwarts House preference, select the characteristics that best describe their personality, and choose the classes that seem the most interesting to them. This will then be saved on the local storage of their device. 
+
+### 2nd Page
+This page will be displaying the collected information from the form. It will display the characteristics you checked that connected you to this house. It will take into consideration your preferred group, however, it can also assign you to the House whose characteristics match better to your selected characteristics. The page will be designed based on the color schemes of your chosen House. It has an update button that will allow the user to edit the information in the form and a delete button that will allow the user to delete the saved information in the local storage on the device of the user. 
+
+### 3rd Page
+This page will be making a class schedule for you based on your preferred classes. If you are interested in Quidditch or any other extracurricular activities, it can also include practice sessions for your hobbies. It has an update button that will allow the user to edit the information in the form and a delete button that will allow the user to delete the saved information in the local storage on the device of the user. 
+
+### CRUD Implementation
+Create - The user inputs data in the HTML form which is saved in localStorage.
+Read – The saved data from the user is displayed on the 2nd and 3rd pages.
+Update – The user can edit their data using the update button. This allows them to modify and save the updated information in the local storage of the device of the user. 
+Delete – The user can delete their data using the delete button which removes the saved information from the local storage of the device of the user and clears displayed information on the pages. 
+
+---
+
+## Wireframe Designs
+
+Below are the wireframe designs used in creating the HTML Form:
+
+### HTML Form
+![HTML Form Wireframe](assets/seventh.png)
+
+### 2nd Page
+![2nd Page Wireframe](assets/eighth.png)
+
+### 3rd Page
+![3rd Page Wireframe](assets/ninth.png)
+
+---
+
 ## Description  
 Welcome to the World of Harry Potter! Join us in learning about each main character, explore the wonderful school of Hogwarts, learn about different spells, and more. Here you’ll discover fascinating stories behind Harry, Hermione, Ron, and the many other unforgettable characters who shaped the wizarding world. You’ll also get to know the four Hogwarts houses, their founders, and what makes each of them unique. Dive into the enchanting lessons taught at Hogwarts, such as Defense against the Dark Arts, and unveil the mysteries behind some of the most powerful and unique spells. From patronuses to dementors, this website will take you on an enchanting journey through The Wizarding world of Harry Potter.  
 

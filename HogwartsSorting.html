@@ -4,22 +4,27 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hogwarts Sorting</title>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Playfair+Display&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display&display=swap" rel="stylesheet">
 <style>
+* { margin:0; padding:0; box-sizing:border-box; }
+
 body {
-  font-family: 'Playfair Display', serif;
-  background: #1a1a2e;
-  color: #f0f0f0;
-  margin:0; padding:0;
+  font-family: "Playfair Display", serif;
+  background: #05070d;
+  color: #eaeaea;
+  line-height: 1.8;
+  overflow-x: hidden;
+  position: relative;
 }
+
 nav {
   display: flex;
   justify-content: center;
   gap: 28px;
   padding: 22px;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0,0,0,0.7);
   backdrop-filter: blur(6px);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  border-bottom: 1px solid rgba(212,175,55,0.3);
   position: relative;
   z-index: 2;
 }
@@ -44,31 +49,29 @@ nav a::after {
   transition: width 0.3s ease;
 }
 
-nav a:hover::after {
-  width: 100%;
-}
+nav a:hover::after { width: 100%; }
+
 .sorting-form {
-  max-width:650px;
-  margin:50px auto;
-  padding:40px;
-  background:#2b2b44;
-  border-radius:15px;
+  max-width: 650px;
+  margin: 50px auto;
+  padding: 40px;
+  background: rgba(43, 43, 68, 0.95);
+  border-radius: 15px;
   box-shadow: 0 0 25px rgba(255,215,0,0.3);
+  position: relative;
+  z-index: 1;
 }
 
-h2 {
-  font-family: 'Cinzel Decorative', serif;
-  font-size:2.2rem;
-  text-align:center;
-  color:#ffd700;
-  margin-bottom:20px;
+.sorting-form h2 {
+  font-family: "Cinzel", serif;
+  font-size: 2.2rem;
+  text-align: center;
+  color: #ffd700;
+  margin-bottom: 20px;
   text-shadow: 0 0 8px #ffd700;
 }
 
-form label {
-  display:block; margin-top:20px; font-weight:bold;
-}
-
+form label { display:block; margin-top:20px; font-weight:bold; }
 input[type="text"], select {
   width:100%; padding:10px; margin-top:5px;
   border-radius:8px; border:none;
@@ -78,19 +81,35 @@ input[type="text"], select {
 .traits label, .classes label {
   display:inline-block;
   background:#1a1a2e;
-  padding:5px 10px;
+  padding:8px 15px;
   margin:5px;
-  border-radius:8px;
+  border-radius:12px;
   cursor:pointer;
-  transition:0.3s;
+  position:relative;
+  overflow:hidden;
+  transition: all 0.3s ease;
 }
+
+.traits input, .classes input { display:none; }
 
 .traits input:checked + span, .classes input:checked + span {
   background:#ffd700;
   color:#1a1a2e;
+  transform: scale(1.2);
+  box-shadow: 0 0 12px #ffd700, 0 0 20px #ffd700 inset;
+  animation: sparkle 0.6s ease forwards;
 }
 
-input[type="checkbox"] { display:none; }
+.traits label:hover span, .classes label:hover span {
+  transform: scale(1.05);
+  box-shadow: 0 0 6px #ffd700;
+}
+
+@keyframes sparkle {
+  0% { box-shadow: 0 0 0px #ffd700, 0 0 0px #ffd700 inset; }
+  50% { box-shadow: 0 0 15px #ffd700, 0 0 25px #ffd700 inset; }
+  100% { box-shadow: 0 0 8px #ffd700, 0 0 12px #ffd700 inset; }
+}
 
 button {
   margin-top:20px; padding:12px 25px;
@@ -103,52 +122,54 @@ button:hover { background:#e5c100; }
 #sortingHatContainer {
   text-align:center; margin-top:30px; display:none; position:relative;
 }
-#sortingHat { width:200px; transition: transform 0.2s; }
+#sortingHatReveal {
+  width:120px;
+  transition: transform 0.2s;
+}
 #houseResult {
   font-size:1.7rem; margin-top:15px;
   font-weight:bold;
   text-shadow:0 0 10px;
 }
-.navigation-links { text-align:center; margin-top:25px; }
-.navigation-links a { color:#ffd700; text-decoration:none; margin:0 10px; font-weight:bold; transition:0.3s; }
-.navigation-links a:hover { color:#fff; }
-.traits label, .classes label {
-  display:inline-block;
-  background:#1a1a2e;
-  padding:8px 15px;
-  margin:5px;
-  border-radius:12px;
-  cursor:pointer;
-  position:relative;
-  transition: all 0.3s ease;
-  overflow:hidden;
-  color:#f0f0f0;
-}
 
-.traits input:checked + span, .classes input:checked + span {
-  background:#ffd700;
-  color:#1a1a2e;
-  transform: scale(1.2);
-  box-shadow: 0 0 12px #ffd700, 0 0 20px #ffd700 inset;
-  animation: sparkle 0.6s ease forwards;
+.magic-dust {
+  position: fixed; top:0; left:0; width:100%; height:100%;
+  pointer-events:none; z-index:0; overflow:hidden;
 }
-
-@keyframes sparkle {
-  0% { box-shadow: 0 0 0px #ffd700, 0 0 0px #ffd700 inset; }
-  50% { box-shadow: 0 0 15px #ffd700, 0 0 25px #ffd700 inset; }
-  100% { box-shadow: 0 0 8px #ffd700, 0 0 12px #ffd700 inset; }
+.magic-dust::before,
+.magic-dust::after {
+  content:""; position:absolute; width:2px; height:2px; border-radius:50%; background:#f5d76e; opacity:0.8;
+  box-shadow:
+    100px 200px #f5d76e,
+    300px 150px #d4af37,
+    500px 400px #fff8c6,
+    700px 300px #f5d76e,
+    900px 100px #d4af37,
+    1200px 500px #fff8c6;
+  animation: float 15s linear infinite;
 }
-
-.traits label:hover, .classes label:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 6px #ffd700;
+.magic-dust::after {
+  width:3px; height:3px; background:#d4af37;
+  box-shadow:
+    200px 300px #d4af37,
+    400px 250px #f5d76e,
+    600px 450px #fff8c6,
+    800px 350px #f5d76e,
+    1000px 150px #d4af37,
+    1300px 550px #fff8c6;
+  animation-duration:20s;
+}
+@keyframes float {
+  0% { transform: translateY(0) translateX(0); opacity:0.2; }
+  50% { transform: translateY(-500px) translateX(100px); opacity:0.8; }
+  100% { transform: translateY(-1000px) translateX(-100px); opacity:0; }
 }
 </style>
 </head>
 <body>
 
 <nav>
-  <a href="index.html">Home</a>
+    <a href="index.html">Home</a>
     <a href="The Magic Begins.html">The Magic Begins</a>
     <a href="Mysteries of the Hogwarts Houses.html">Hogwarts Houses</a>
     <a href="Heroes of the Wizarding World.html">Characters</a>
@@ -156,6 +177,8 @@ button:hover { background:#e5c100; }
     <a href="The Art of Wizardry.html">Wizardry</a>
     <a href="Meet the Minds Behind the Magic.html">Minds Behind the Magic</a>
 </nav>
+
+<div class="magic-dust"></div>
 
 <section class="sorting-form">
 <h2>Discover Your Hogwarts House</h2>
@@ -197,76 +220,72 @@ button:hover { background:#e5c100; }
 <button type="button" id="deleteBtn">Delete</button>
 </form>
 
-<div id="sortingHatContainer">
-<img id="sortingHat" src="assets/Sorting Hat.png" alt="Sorting Hat">
-<p id="houseResult"></p>
-</div>
-
-<div class="navigation-links">
-<a href="page2.html">Go to Profile</a> | 
-<a href="page3.html">Go to Class Schedule</a>
+<div id="sortingHatContainer" style="display:none; text-align:center; margin-top:30px;">
+  <img id="sortingHatReveal" src="assets/Sorting Hat.png" alt="Sorting Hat">
+  <p id="houseResult"></p>
 </div>
 </section>
 
 <script>
 const form=document.getElementById('hogwartsForm');
 const hatContainer=document.getElementById('sortingHatContainer');
-const hatImg=document.getElementById('sortingHat');
+const hatImg=document.getElementById('sortingHatReveal');
 const houseResult=document.getElementById('houseResult');
 
 function saveData(house){
-const data={
-  name:document.getElementById('name').value,
-  house:house,
-  traits:Array.from(document.querySelectorAll('input[name="traits"]:checked')).map(i=>i.value),
-  classes:Array.from(document.querySelectorAll('input[name="classes"]:checked')).map(i=>i.value)
-};
-localStorage.setItem('hogwartsUser', JSON.stringify(data));
+  const data={
+    name:document.getElementById('name').value,
+    house:house,
+    traits:Array.from(document.querySelectorAll('input[name="traits"]:checked')).map(i=>i.value),
+    classes:Array.from(document.querySelectorAll('input[name="classes"]:checked')).map(i=>i.value)
+  };
+  localStorage.setItem('hogwartsUser', JSON.stringify(data));
 }
 
 form.addEventListener('submit', e=>{
-e.preventDefault();
-const traits=Array.from(document.querySelectorAll('input[name="traits"]:checked')).map(i=>i.value);
-let house='';
-if(traits.includes('Brave')) house='Gryffindor';
-else if(traits.includes('Loyal')) house='Hufflepuff';
-else if(traits.includes('Wise')) house='Ravenclaw';
-else if(traits.includes('Cunning')) house='Slytherin';
-else house=document.getElementById('house').value || 'Gryffindor';
+  e.preventDefault();
+  const traits=Array.from(document.querySelectorAll('input[name="traits"]:checked')).map(i=>i.value);
+  let house='';
+  if(traits.includes('Brave')) house='Gryffindor';
+  else if(traits.includes('Loyal')) house='Hufflepuff';
+  else if(traits.includes('Wise')) house='Ravenclaw';
+  else if(traits.includes('Cunning')) house='Slytherin';
+  else house=document.getElementById('house').value || 'Gryffindor';
 
-saveData(house);
+  saveData(house);
 
-hatContainer.style.display='block';
-houseResult.textContent='';
-hatImg.style.animation='';
+  hatContainer.style.display='block';
+  houseResult.textContent='';
+  hatImg.style.animation='';
 
-let count=0;
-const shake=setInterval(()=>{ hatImg.style.transform=`rotate(${count%2===0?15:-15}deg)`; count++; },100);
+  let count=0;
+  const shake=setInterval(()=>{ hatImg.style.transform=`rotate(${count%2===0?15:-15}deg)`; count++; },100);
 
-setTimeout(()=>{
-clearInterval(shake);
-hatImg.style.transform='rotate(0deg)';
-const colorMap={'Gryffindor':'#ff0000','Hufflepuff':'#ffd700','Ravenclaw':'#00aaff','Slytherin':'#00ff00'};
-houseResult.textContent=`You are a ${house}!`;
-houseResult.style.color=colorMap[house] || '#ffd700';
-houseResult.style.textShadow=`0 0 15px ${colorMap[house] || '#ffd700'}`;
-},2000);
+  setTimeout(()=>{
+    clearInterval(shake);
+    hatImg.style.transform='rotate(0deg)';
+    const colorMap={'Gryffindor':'#ff0000','Hufflepuff':'#ffd700','Ravenclaw':'#00aaff','Slytherin':'#00ff00'};
+    houseResult.textContent=`You are a ${house}!`;
+    houseResult.style.color=colorMap[house] || '#ffd700';
+    houseResult.style.textShadow=`0 0 15px ${colorMap[house] || '#ffd700'}`;
+  },2000);
 });
 
 document.getElementById('updateBtn').addEventListener('click', ()=>{
-const data=JSON.parse(localStorage.getItem('hogwartsUser'));
-if(!data) return alert('No data to update!');
-document.getElementById('name').value=data.name;
-document.getElementById('house').value=data.house;
-document.querySelectorAll('input[name="traits"]').forEach(i=>i.checked=data.traits.includes(i.value));
-document.querySelectorAll('input[name="classes"]').forEach(i=>i.checked=data.classes.includes(i.value));
+  const data=JSON.parse(localStorage.getItem('hogwartsUser'));
+  if(!data) return alert('No data to update!');
+  document.getElementById('name').value=data.name;
+  document.getElementById('house').value=data.house;
+  document.querySelectorAll('input[name="traits"]').forEach(i=>i.checked=data.traits.includes(i.value));
+  document.querySelectorAll('input[name="classes"]').forEach(i=>i.checked=data.classes.includes(i.value));
 });
 
 document.getElementById('deleteBtn').addEventListener('click', ()=>{
-localStorage.removeItem('hogwartsUser');
-alert('Data deleted!');
-window.location.reload();
+  localStorage.removeItem('hogwartsUser');
+  alert('Data deleted!');
+  window.location.reload();
 });
 </script>
+
 </body>
 </html>
